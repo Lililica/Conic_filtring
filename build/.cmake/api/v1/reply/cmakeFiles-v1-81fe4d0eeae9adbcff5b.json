@@ -28,6 +28,7 @@
 			"expression" : "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/*",
 			"paths" : 
 			[
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/Conic.hpp",
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp"
 			],
 			"recurse" : true

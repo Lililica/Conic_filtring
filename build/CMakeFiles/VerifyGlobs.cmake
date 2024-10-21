@@ -36,6 +36,7 @@ endif()
 # SOURCES at CMakeLists.txt:42 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/*")
 set(OLD_GLOB
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/Conic.hpp"
   "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")

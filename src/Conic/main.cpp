@@ -2,6 +2,12 @@
 #include <Eigen/Dense>
 #include <sil/sil.hpp>
 #include <vector>
+#include <cstdlib>
+#include <ctime>
+
+double generateRandomDouble(double min, double max) {
+    return min + static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (max - min)));
+}
 
 Eigen::VectorXd from_point_to_conic_equation(Eigen::Vector3d & v)
 {
@@ -18,16 +24,21 @@ Eigen::VectorXd from_point_to_conic_equation(Eigen::Vector3d & v)
 
 bool respect_conic(double x, double y, Eigen::VectorXd & v)
 {
-    return (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y < 10) && (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y > -10);
+    return (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) < 1) && (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) > -1);
 }
 
 int main(int, char**){
+
+    std::srand(static_cast<unsigned int>(std::time(0)));
+
+    double randomValueSet = 100000.;
+
     std::vector<Eigen::Vector3d> pointList{
-        Eigen::Vector3d{110,-24,1},
-        Eigen::Vector3d{3,38,1},
-        Eigen::Vector3d{-59,5,1},
-        Eigen::Vector3d{46,-11400,1},
-        Eigen::Vector3d{1,1,1}
+        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
+        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
+        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
+        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
+        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)}
     };
 
     Eigen::MatrixXd A(6,6);
@@ -51,8 +62,6 @@ int main(int, char**){
     // Eigen::VectorXd sol = A.colPivHouseholderQr().solve(vecNull);
     std::cout <<  sol << "\n";
 
-    std::cout << respect_conic(3,2, sol) << std::endl;
-
     sil::Image image{500/*width*/, 500/*height*/};
 
     int const centerX{(image.width()-1)/2};
@@ -64,13 +73,13 @@ int main(int, char**){
         for(int y{0}; y<image.height(); y++){
             if(respect_conic((x-centerX)/scale,(y-centerY)/scale,sol))
             {
-                std::cout << "x : " << x << " y : " << y << "\n";
+                // std::cout << "x : " << x << " y : " << y << "\n";
                 image.pixel(x, y) = glm::vec3{1.f};
             } 
         }
     }
 
-    image.save("output/R200T2.png");
+    image.save("output/Random10.png");
 
 
 
