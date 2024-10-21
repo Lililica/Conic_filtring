@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -I/opt/homebrew/include/eigen3 -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -mmacosx-version-min=14.6 -o CMakeFiles/conicFiltring.dir/src/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/main.cpp",
+  "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/main.cpp",
+  "output": "CMakeFiles/conicFiltring.dir/src/main.cpp.o"
+}
+]
