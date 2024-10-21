@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Only default component available"
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/Applications/CMake.app/Contents/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/Applications/CMake.app/Contents/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/Applications/CMake.app/Contents/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build//CMakeFiles/progress.marks
@@ -113,45 +158,98 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named conicFiltring
+# Target rules for targets named Conic
 
 # Build rule for target.
-conicFiltring: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 conicFiltring
-.PHONY : conicFiltring
+Conic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Conic
+.PHONY : Conic
 
 # fast build rule for target.
-conicFiltring/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/conicFiltring.dir/build.make CMakeFiles/conicFiltring.dir/build
-.PHONY : conicFiltring/fast
+Conic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Conic.dir/build.make CMakeFiles/Conic.dir/build
+.PHONY : Conic/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+#=============================================================================
+# Target rules for targets named sil
+
+# Build rule for target.
+sil: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sil
+.PHONY : sil
+
+# fast build rule for target.
+sil/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/sil-build/CMakeFiles/sil.dir/build.make _deps/sil-build/CMakeFiles/sil.dir/build
+.PHONY : sil/fast
+
+#=============================================================================
+# Target rules for targets named uninstall
+
+# Build rule for target.
+uninstall: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
+.PHONY : uninstall
+
+# fast build rule for target.
+uninstall/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/glm-build/CMakeFiles/uninstall.dir/build.make _deps/glm-build/CMakeFiles/uninstall.dir/build
+.PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named img
+
+# Build rule for target.
+img: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 img
+.PHONY : img
+
+# fast build rule for target.
+img/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/img-build/CMakeFiles/img.dir/build.make _deps/img-build/CMakeFiles/img.dir/build
+.PHONY : img/fast
+
+#=============================================================================
+# Target rules for targets named stb_image
+
+# Build rule for target.
+stb_image: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stb_image
+.PHONY : stb_image
+
+# fast build rule for target.
+stb_image/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/img-build/CMakeFiles/stb_image.dir/build.make _deps/img-build/CMakeFiles/stb_image.dir/build
+.PHONY : stb_image/fast
+
+src/Conic/main.o: src/Conic/main.cpp.o
+.PHONY : src/Conic/main.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/conicFiltring.dir/build.make CMakeFiles/conicFiltring.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/Conic/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Conic.dir/build.make CMakeFiles/Conic.dir/src/Conic/main.cpp.o
+.PHONY : src/Conic/main.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/Conic/main.i: src/Conic/main.cpp.i
+.PHONY : src/Conic/main.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/conicFiltring.dir/build.make CMakeFiles/conicFiltring.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/Conic/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Conic.dir/build.make CMakeFiles/Conic.dir/src/Conic/main.cpp.i
+.PHONY : src/Conic/main.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/Conic/main.s: src/Conic/main.cpp.s
+.PHONY : src/Conic/main.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/conicFiltring.dir/build.make CMakeFiles/conicFiltring.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/Conic/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Conic.dir/build.make CMakeFiles/Conic.dir/src/Conic/main.cpp.s
+.PHONY : src/Conic/main.cpp.s
 
 # Help Target
 help:
@@ -160,11 +258,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... conicFiltring"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... uninstall"
+	@echo "... Conic"
+	@echo "... img"
+	@echo "... sil"
+	@echo "... stb_image"
+	@echo "... src/Conic/main.o"
+	@echo "... src/Conic/main.i"
+	@echo "... src/Conic/main.s"
 .PHONY : help
 
 
@@ -176,6 +282,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
