@@ -24,7 +24,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles/cmake.verify_globs")
 endif()
 
-# SOURCES at CMakeLists.txt:42 (file)
+# SOURCES at CMakeLists.txt:48 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib/*")
 set(OLD_GLOB
   )
@@ -33,11 +33,49 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles/cmake.verify_globs")
 endif()
 
-# SOURCES at CMakeLists.txt:42 (file)
+# SOURCES at CMakeLists.txt:48 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/*")
 set(OLD_GLOB
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/.DS_Store"
   "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/Conic.hpp"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/conic_fitting.pdf"
   "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/animation.gif"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image0.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image1.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image10.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image11.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image12.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image13.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image14.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image15.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image16.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image17.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image18.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image19.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image2.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image20.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image21.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image22.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image23.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image24.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image25.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image26.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image27.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image28.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image29.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image3.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image4.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image5.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image6.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image7.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image8.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/output/image9.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/pngTest/coucou.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/pngTest/test1.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/pngTest/test2.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/pngTest/test3.png"
+  "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/pngTest/test4.png"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")

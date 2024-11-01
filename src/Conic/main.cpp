@@ -5,28 +5,17 @@
 #include <cstdlib>
 #include <ctime>
 #include "Conic.hpp"
+#include <cmath>
+#include <filesystem>
+#include <opencv2/opencv.hpp>
 
-double generateRandomDouble(double min, double max) {
-    return min + static_cast<double>(rand()) / (static_cast<double>(RAND_MAX / (max - min)));
-}
+// magick convert -delay 10 -loop 0 *.png animation.gif
 
-Eigen::VectorXd from_point_to_conic_equation(Eigen::Vector3d & v)
+bool respect(double x, double y, Eigen::VectorXd & v, double const& epaisseur)
 {
-    Eigen::VectorXd result(6);
-    result(0) = v[0]*v[0];
-    result(1) = v[0]*v[1];
-    result(2) = v[1]*v[1];
-    result(3) = v[0]*v[2];
-    result(4) = v[1]*v[2];
-    result(5) = v[2]*v[2];
-    return result;
+    return (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) < epaisseur) && (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) > -epaisseur);
 }
 
-
-bool respect_conic(double x, double y, Eigen::VectorXd & v)
-{
-    return (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) < 0.1) && (v(0)*x*x + v(1)*x*y + v(2)*y*y + v(3)*x + v(4)*y + v(5) > -0.1);
-}
 
 int main(int, char**){
 
@@ -34,55 +23,60 @@ int main(int, char**){
 
     double randomValueSet = 1000000.;
 
-    std::vector<Eigen::Vector3d> pointList{
-        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
-        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
-        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
-        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)},
-        Eigen::Vector3d{generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet),generateRandomDouble(-randomValueSet, randomValueSet)}
-    };
+
+    Conic conic_test;
+
+    conic_test.conic_setup_random(randomValueSet);
+    conic_test.display_conic();
+
+    double epaisseur {0.005};
+
+    // conic_test.save_image("test4",epaisseur);
 
 
+    Conic C;
+    Conic C1;
+    Conic C2;
 
-    Eigen::MatrixXd A(5,6);
-    for(int i{0}; i<pointList.size(); ++i)
-    {
-        for(int k{0}; k<pointList.size()+1; ++k)
-        {
-            A(i,k) = from_point_to_conic_equation(pointList[i])[k];
-        }
-    }
-    std::cout << A << "\n";
+    C1.conic_setup_random(randomValueSet);
+    C2.conic_setup_random(randomValueSet);
 
-    // A.push_back(Eigen::VectorXd(6));
-    // Eigen::JacobiSVD<Eigen::MatrixXd> svd (A, Eigen::ComputeThinU|Eigen::ComputeFullV);
-    // Eigen::VectorXd sol = svd.matrixV().rightCols(1);
+    double t = 0;
 
-    Eigen::JacobiSVD<Eigen::MatrixXd> svd(A, Eigen::ComputeThinU|Eigen::ComputeFullV);
-    Eigen::VectorXd sol(6);
-    sol << 0,1,0,1,1,1;
-    // // std::cout << vecNull << "\n";
-    // Eigen::VectorXd sol = A.colPivHouseholderQr().solve(vecNull);
-    std::cout <<  sol << "\n";
 
-    sil::Image image{500/*width*/, 500/*height*/};
-
+    sil::Image image{1500/*width*/, 1500/*height*/};
     int const centerX{(image.width()-1)/2};
     int const centerY{(image.height()-1)/2};
 
-    double scale = 10;
+    double scale = 100;
 
-    for(int x{0}; x<image.width(); x++){
-        for(int y{0}; y<image.height(); y++){
-            if(respect_conic((x-centerX)/scale,(y-centerY)/scale,sol))
-            {
-                // std::cout << "x : " << x << " y : " << y << "\n";
-                image.pixel(x, y) = glm::vec3{1.f};
-            } 
+    for(int i{0}; i<30; ++i){
+        t += 0.2;
+
+        Eigen::VectorXd C_coef = std::cos(t)*C1.get_coef()/C1.get_norm() + std::sin(t)*C2.get_coef()/C2.get_norm();
+
+        float r = (std::sin(t + 0) + 1) / 2; // Normaliser entre 0 et 1
+        float g = (std::sin(t + 2 * M_PI / 3) + 1) / 2; // Décalage pour le vert
+        float b = (std::sin(t + 4 * M_PI / 3) + 1) / 2;
+
+        C.set_coef(C_coef);
+        C.save_image(std::string{"image"}+std::to_string(i), epaisseur, r, g, b);
+
+        
+        for(int x{0}; x<image.width(); x++){
+            for(int y{0}; y<image.height(); y++){
+                if(respect((x-centerX)/scale, (y-centerY)/scale, C_coef, epaisseur))
+                {
+                    image.pixel(x, y) = glm::vec3{r,g,b};
+                } 
+            }
         }
     }
 
-    image.save("output/Droite.png");
+        
+    image.save(std::string{"src/Conic/pngTest/test4.png"});
+
+    
 
 
 

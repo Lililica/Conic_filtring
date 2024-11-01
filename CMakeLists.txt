@@ -1,8 +1,3 @@
-
-
-
-
-
 cmake_minimum_required(VERSION 3.20)
 
 # You can set the name of your project here
@@ -31,6 +26,17 @@ function(add_exercise FOLDER)
         message(FATAL_ERROR "lib EIGEN3 not found")
     endif()
 
+
+
+    # Trouver OpenCV
+    find_package(OpenCV REQUIRED)
+
+    # Vérifiez si GifLib est installé
+    find_package(GIF REQUIRED)
+    if (NOT GIF_FOUND)
+        message(FATAL_ERROR "GifLib not found!")
+    endif()
+
     # Choose your C++ version
     target_compile_features(${FOLDER} PRIVATE cxx_std_17)
 
@@ -47,6 +53,16 @@ function(add_exercise FOLDER)
     # Link sil into the project
     target_link_libraries(${FOLDER} PRIVATE sil)
     target_include_directories(${FOLDER} PRIVATE "${EIGEN3_INCLUDE_DIR}")
+    
+
+    # Liez OpenCV à l'exécutable
+    target_link_libraries(${FOLDER} PRIVATE ${OpenCV_LIBS})
+
+    # Inclure le répertoire d'en-têtes d'OpenCV
+    include_directories(${OpenCV_INCLUDE_DIRS})
+
+    target_include_directories(${FOLDER} PRIVATE ${GIF_INCLUDE_DIR})
+    target_link_libraries(${FOLDER} PRIVATE ${OpenCV_LIBS} GIF::GIF)
 
 
 
