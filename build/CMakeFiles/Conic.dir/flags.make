@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include
 
-CXX_FLAGSarm64 = -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
+CXX_FLAGSarm64 = -g -std=c++17 -arch arm64
 
-CXX_FLAGS = -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
+CXX_FLAGS = -g -std=c++17 -arch arm64
 

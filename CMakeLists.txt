@@ -27,7 +27,6 @@ function(add_exercise FOLDER)
     endif()
 
 
-
     # Trouver OpenCV
     find_package(OpenCV REQUIRED)
 
@@ -69,3 +68,4 @@ function(add_exercise FOLDER)
 endfunction(add_exercise)
 
 add_exercise(Conic)
+add_exercise(RadialNonLinear)

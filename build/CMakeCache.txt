@@ -357,6 +357,9 @@ Magick_DIR:PATH=Magick_DIR-NOTFOUND
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/opt/homebrew/lib/cmake/opencv4
 
+//The directory containing a CMake configuration file for OpenKraken.
+OpenKraken_DIR:PATH=OpenKraken_DIR-NOTFOUND
+
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 

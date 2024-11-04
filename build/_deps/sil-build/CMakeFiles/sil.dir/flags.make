@@ -6,7 +6,7 @@ CXX_DEFINES = -DSIL_CMAKE_SOURCE_DIR=\"/Users/lililica/Documents/IMAC/Maths/Proj
 
 CXX_INCLUDES = -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib
 
-CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
+CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64
 
-CXX_FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk
+CXX_FLAGS = -g -std=gnu++17 -arch arm64
 

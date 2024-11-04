@@ -6,7 +6,7 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib
 
-CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion
+CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion
 
-CXX_FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion
+CXX_FLAGS = -g -std=gnu++17 -arch arm64 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion
 

@@ -1,37 +1,43 @@
 [
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
-  "command": "/usr/bin/clang++  -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -g -std=c++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/Conic.dir/src/Conic/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
+  "command": "/usr/bin/clang++  -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -g -std=c++17 -arch arm64 -o CMakeFiles/Conic.dir/src/Conic/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
   "output": "CMakeFiles/Conic.dir/src/Conic/main.cpp.o"
 },
 {
+  "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
+  "command": "/usr/bin/clang++  -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -g -std=c++17 -arch arm64 -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
+  "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
+  "output": "CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o"
+},
+{
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-build",
-  "command": "/usr/bin/clang++ -DSIL_CMAKE_SOURCE_DIR=\\\"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring\\\" -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/sil.dir/src/sil.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/src/sil.cpp",
+  "command": "/usr/bin/clang++ -DSIL_CMAKE_SOURCE_DIR=\\\"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring\\\" -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -o CMakeFiles/sil.dir/src/sil.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/src/sil.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/src/sil.cpp",
   "output": "_deps/sil-build/CMakeFiles/sil.dir/src/sil.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-build",
-  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image.cpp",
+  "command": "/usr/bin/clang++   -g -arch arm64 -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image.cpp",
   "output": "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-build",
-  "command": "/usr/bin/clang++   -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image_write.cpp",
+  "command": "/usr/bin/clang++   -g -arch arm64 -o CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image_write.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib/stb_image/stb_image_write.cpp",
   "output": "_deps/img-build/CMakeFiles/stb_image.dir/lib/stb_image/stb_image_write.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-build",
-  "command": "/usr/bin/clang++  -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion -o CMakeFiles/img.dir/src/Load.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Load.cpp",
+  "command": "/usr/bin/clang++  -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion -o CMakeFiles/img.dir/src/Load.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Load.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Load.cpp",
   "output": "_deps/img-build/CMakeFiles/img.dir/src/Load.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-build",
-  "command": "/usr/bin/clang++  -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion -o CMakeFiles/img.dir/src/Save.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Save.cpp",
+  "command": "/usr/bin/clang++  -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/lib -g -std=gnu++17 -arch arm64 -Wall -Wextra -Wpedantic -pedantic-errors -Wconversion -Wsign-conversion -o CMakeFiles/img.dir/src/Save.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Save.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/img-src/src/Save.cpp",
   "output": "_deps/img-build/CMakeFiles/img.dir/src/Save.cpp.o"
 }
