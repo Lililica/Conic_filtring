@@ -1,15 +1,27 @@
 [
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
-  "command": "/usr/bin/clang++  -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -g -std=c++17 -arch arm64 -o CMakeFiles/Conic.dir/src/Conic/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /opt/homebrew/Cellar/raylib/5.0/include -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/Conic.dir/src/Conic/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic/main.cpp",
   "output": "CMakeFiles/Conic.dir/src/Conic/main.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
-  "command": "/usr/bin/clang++  -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -g -std=c++17 -arch arm64 -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /opt/homebrew/Cellar/raylib/5.0/include -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
   "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
   "output": "CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o"
+},
+{
+  "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /opt/homebrew/Cellar/raylib/5.0/include -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp",
+  "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp",
+  "output": "CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o"
+},
+{
+  "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build",
+  "command": "/usr/bin/clang++  -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /opt/homebrew/Cellar/raylib/5.0/include -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp",
+  "file": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp",
+  "output": "CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o"
 },
 {
   "directory": "/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-build",

@@ -26,6 +26,7 @@ function(add_exercise FOLDER)
         message(FATAL_ERROR "lib EIGEN3 not found")
     endif()
 
+    find_package(raylib REQUIRED)
 
     # Trouver OpenCV
     find_package(OpenCV REQUIRED)
@@ -46,13 +47,14 @@ function(add_exercise FOLDER)
     # Add all the source files
     file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/${FOLDER}/* lib/*)
     target_sources(${FOLDER} PRIVATE ${SOURCES})
-    target_include_directories(${FOLDER} PRIVATE src/${FOLDER} lib)
+
 
 
     # Link sil into the project
     target_link_libraries(${FOLDER} PRIVATE sil)
     target_include_directories(${FOLDER} PRIVATE "${EIGEN3_INCLUDE_DIR}")
-    
+    target_link_libraries(${FOLDER} PRIVATE raylib)
+
 
     # Liez OpenCV à l'exécutable
     target_link_libraries(${FOLDER} PRIVATE ${OpenCV_LIBS})

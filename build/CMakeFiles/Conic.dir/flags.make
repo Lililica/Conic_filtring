@@ -4,9 +4,9 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/Conic -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/lib -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include
+CXX_INCLUDES = -I/opt/homebrew/include/eigen3 -I/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/glm-src -isystem /opt/homebrew/Cellar/opencv/4.10.0_12/include/opencv4 -isystem /opt/homebrew/include -isystem /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/_deps/sil-src/include -isystem /opt/homebrew/Cellar/raylib/5.0/include
 
-CXX_FLAGSarm64 = -g -std=c++17 -arch arm64
+CXX_FLAGSarm64 = -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include
 
-CXX_FLAGS = -g -std=c++17 -arch arm64
+CXX_FLAGS = -g -std=c++17 -arch arm64 -I/opt/homebrew/Cellar/raylib/5.0/include
 

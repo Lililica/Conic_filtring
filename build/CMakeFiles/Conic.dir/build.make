@@ -96,6 +96,7 @@ Conic_EXTERNAL_OBJECTS =
 Conic: CMakeFiles/Conic.dir/src/Conic/main.cpp.o
 Conic: CMakeFiles/Conic.dir/build.make
 Conic: _deps/sil-build/libsil.a
+Conic: /opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
 Conic: /opt/homebrew/lib/libopencv_gapi.4.10.0.dylib
 Conic: /opt/homebrew/lib/libopencv_stitching.4.10.0.dylib
 Conic: /opt/homebrew/lib/libopencv_alphamat.4.10.0.dylib

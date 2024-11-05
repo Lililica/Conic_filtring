@@ -77,10 +77,14 @@
 			[
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/.DS_Store",
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp",
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp",
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.hpp",
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/radialNonLinear.pdf",
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/source/.DS_Store",
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/source/ressource.png",
 				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/source/ressource_modif.png",
-				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/test.txt"
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp",
+				"/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.hpp"
 			],
 			"recurse" : true
 		}
@@ -336,6 +340,39 @@
 		},
 		{
 			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/raylib/raylib-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/raylib/raylib-config.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/Applications/CMake.app/Contents/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
 			"path" : "/opt/homebrew/lib/cmake/opencv4/OpenCVConfig-version.cmake"
 		},
 		{
@@ -426,6 +463,14 @@
 		{
 			"isExternal" : true,
 			"path" : "/opt/homebrew/share/eigen3/cmake/Eigen3Targets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/raylib/raylib-config-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/homebrew/lib/cmake/raylib/raylib-config.cmake"
 		},
 		{
 			"isExternal" : true,

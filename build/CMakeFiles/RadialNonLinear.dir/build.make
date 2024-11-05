@@ -86,16 +86,49 @@ CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/main.cpp -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.s
 
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o: CMakeFiles/RadialNonLinear.dir/flags.make
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o: /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o: CMakeFiles/RadialNonLinear.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o -MF CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o.d -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp
+
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp > CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.i
+
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/menu.cpp -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.s
+
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o: CMakeFiles/RadialNonLinear.dir/flags.make
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o: /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o: CMakeFiles/RadialNonLinear.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o -MF CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o.d -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o -c /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp
+
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp > CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.i
+
+CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/utils.cpp -o CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.s
+
 # Object files for target RadialNonLinear
 RadialNonLinear_OBJECTS = \
-"CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o"
+"CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o" \
+"CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o" \
+"CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o"
 
 # External object files for target RadialNonLinear
 RadialNonLinear_EXTERNAL_OBJECTS =
 
 RadialNonLinear: CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/main.cpp.o
+RadialNonLinear: CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/menu.cpp.o
+RadialNonLinear: CMakeFiles/RadialNonLinear.dir/src/RadialNonLinear/utils.cpp.o
 RadialNonLinear: CMakeFiles/RadialNonLinear.dir/build.make
 RadialNonLinear: _deps/sil-build/libsil.a
+RadialNonLinear: /opt/homebrew/Cellar/raylib/5.0/lib/libraylib.dylib
 RadialNonLinear: /opt/homebrew/lib/libopencv_gapi.4.10.0.dylib
 RadialNonLinear: /opt/homebrew/lib/libopencv_stitching.4.10.0.dylib
 RadialNonLinear: /opt/homebrew/lib/libopencv_alphamat.4.10.0.dylib
@@ -156,7 +189,7 @@ RadialNonLinear: /opt/homebrew/lib/libopencv_photo.4.10.0.dylib
 RadialNonLinear: /opt/homebrew/lib/libopencv_imgproc.4.10.0.dylib
 RadialNonLinear: /opt/homebrew/lib/libopencv_core.4.10.0.dylib
 RadialNonLinear: CMakeFiles/RadialNonLinear.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable RadialNonLinear"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable RadialNonLinear"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RadialNonLinear.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
