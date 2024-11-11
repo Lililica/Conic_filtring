@@ -57,50 +57,76 @@ int main(){
 
   
   
-    /*
+    /*________________________________________________________________
     
         BEGIN TO SETUP THE WINDOW
     
-    */
+    __________________________________________________________________*/
 
    
+    // Initialisation Window _________________________________________
 
-    InitWindow(800, 600, "Radial Non Linear Projet Maths");
+    InitWindow(1200, 900, "Radial Non Linear Projet Maths");
+
+    // Load Ressources _______________________________________________
+
+    app App;
 
     Image imageDeBase = LoadImage("/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/source/ressource.png");
-    Texture2D textDeBase = LoadTextureFromImage(imageDeBase);
+    App.m_texture.push_back(LoadTextureFromImage(imageDeBase));
 
     UnloadImage(imageDeBase);
 
-    std::vector<Vector2> listOfPoint;
+    // Setup Variables _______________________________________________
 
-    // Boucle principale
+    
+
+    
+    App.setup_menu();
+
+
+    // Start the program _____________________________________________
+
+
     while (!WindowShouldClose()) {
-        // Démarrer le dessin
+
         BeginDrawing();
-        ClearBackground(RAYWHITE);
+        ClearBackground(GRAY);
 
 
 
-        DrawTexturePro(textDeBase, 
-                    Rectangle{0,float(textDeBase.height),float(textDeBase.width),-float(textDeBase.height)}, 
-                    Rectangle{0,0,float(textDeBase.width),float(textDeBase.height)},
-                    Vector2{0., 0.},
-                    0.,
-                    WHITE);  
+        // DrawTexturePro(textDeBase, 
+        //             Rectangle{0,float(textDeBase.height),float(textDeBase.width),-float(textDeBase.height)}, 
+        //             Rectangle{0,0,float(textDeBase.width),float(textDeBase.height)},
+        //             Vector2{0., 0.},
+        //             0.,
+        //             WHITE);  
 
-        draw_point(listOfPoint);
+        // if(IsMouseButtonPressed(MOUSE_LEFT_BUTTON)){App.ButtonIsClickedThisFrame = true;}
 
-        DrawText("Menu :", 20,20, 30, BLUE);
 
-        // Fin du dessin
+        App.draw_content();
+
+        App.show_my_menu();
+        
+
+        // App.ButtonIsClickedThisFrame = false;
+
+
+
+
+
+
         EndDrawing();
     }
 
-    UnloadTexture(textDeBase);
+    // Unload ressources _____________________________________________
 
+    for(Texture2D texture : App.m_texture) UnloadTexture(texture);
+    
 
-    // Détruire la fenêtre
+    // Close utilities for the window ________________________________
+
     CloseWindow();
 
     return 0;
