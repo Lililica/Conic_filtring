@@ -8,6 +8,16 @@ void draw_point(std::vector<Vector2> & v, Color c)
     }
 }
 
+float delta(float& xyi, float& xyc, double& k1, double& k2, float& r)
+{
+    return (xyi - xyc)*(k1*r + k2*r*r);
+}
+
+float r2(float& xi, float& yi, float& xc, float& yc)
+{
+    return std::pow(xi - xc, 2) + std::pow(yi - yc, 2);
+}
+
 
 void droite::setup_coef_droite_from_points()
 {
@@ -23,25 +33,36 @@ void droite::setup_coef_droite_from_points()
         droiteOrigin.y += this->listOfPoint[i].y;
     }
 
-    std::cout << M << std::endl;
 
     Eigen::JacobiSVD<Eigen::MatrixXd> svd (M, Eigen::ComputeThinU|Eigen::ComputeFullV);
-    this->droiteCoef = svd.matrixV().rightCols(1) * 5e5;
+    this->droiteCoef = svd.matrixV().rightCols(1);
+
+    {
+        double temp = this->droiteCoef(0);
+        this->droiteCoef(0) = this->droiteCoef(1);
+        this->droiteCoef(1) = temp;
+    }
 
     droiteOrigin.x = droiteOrigin.x/this->listOfPoint.size();
     droiteOrigin.y = droiteOrigin.y/this->listOfPoint.size();
 
-    std::cout << droiteCoef << std::endl;
 
-    std::cout << droiteOrigin.x << " and " << droiteOrigin.y << std::endl;
 }
 
 void droite::setup_residu_and_distance()
 {
     distanceFromDroite = std::vector<double>(this->listOfPoint.size());
+    this->residu = 0.;
 
-    for(int i{0}; i<this->listOfPoint.size(), ++i)
+    for(int i{0}; i<this->listOfPoint.size(); ++i)
     {
-        
+        distanceFromDroite[i] = std::abs(Eigen::Vector3d{listOfPoint[i].x,listOfPoint[i].y,1.}.transpose()*droiteCoef)/std::pow(droiteCoef(0)*droiteCoef(0) + droiteCoef(1)*droiteCoef(1), 0.5);
+        this->residu += distanceFromDroite[i];
     }
+
+    
+
+    this->residu = this->residu/this->listOfPoint.size();
 }
+
+

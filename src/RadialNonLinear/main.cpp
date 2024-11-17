@@ -10,15 +10,6 @@
 
 
 
-int delta(int& xyi, int& xyc, double& k1, double& k2, int& r)
-{
-    return (xyi - xyc)*(k1*r + k2*r*r);
-}
-
-int r2(int& xi, int& yi, int& xc, int& yc)
-{
-    return std::pow(xi - xc, 2) + std::pow(yi - yc, 2);
-}
 
 
 int main(){
@@ -29,8 +20,8 @@ int main(){
 
     sil::Image resultImage = imageRef;
 
-    int xc = imageRef.width()/2; 
-    int yc = imageRef.height()/2; 
+    float xc = imageRef.width()/2; 
+    float yc = imageRef.height()/2; 
 
     double k1 = 10e-10;
     double k2 = 8e-13;
@@ -39,13 +30,13 @@ int main(){
     //     return std::pow(a - xc, 2) + std::pow(b - yc, 2);
     // };
 
-    for(int x{0}; x<imageRef.width(); x++)
+    for(float x{0}; x<imageRef.width(); x++)
     {
-        for(int y{0}; y<imageRef.height(); y++)
+        for(float y{0}; y<imageRef.height(); y++)
         {
-            int ri = r2(x,y,xc,yc);
-            int xichap = x - delta(x, xc, k1, k2, ri);
-            int yichap = y - delta(y, yc, k1, k2, ri);
+            float ri = r2(x,y,xc,yc);
+            float xichap = x - delta(x, xc, k1, k2, ri);
+            float yichap = y - delta(y, yc, k1, k2, ri);
             if(!(xichap>=imageRef.width() || yichap>=imageRef.height() || yichap<0 || xichap<0) ){
                 resultImage.pixel(x,y) = imageRef.pixel(xichap, yichap);
             }

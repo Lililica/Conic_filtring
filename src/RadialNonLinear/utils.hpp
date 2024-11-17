@@ -2,11 +2,13 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <numeric>
 #include "raylib.h"
+
 #include <Eigen/Dense>
 
 
-enum button_type {GO_TO_MENU, GO_TO_SELECTION, NEW_LINE_CALLED, SHOW_EVERY_LINE, FINISH_DRAW_LINE};
+enum button_type {GO_TO_MENU, GO_TO_SELECTION, NEW_LINE_CALLED, SHOW_EVERY_LINE, FINISH_DRAW_LINE, RESOLUTION_PART};
 
 void draw_point(std::vector<Vector2> & v, Color c);
 
@@ -40,4 +42,10 @@ struct droite
     void setup_residu_and_distance();
 
 };
+
+float delta(float& xyi, float& xyc, double& k1, double& k2, float& r);
+
+float r2(float& xi, float& yi, float& xc, float& yc);
+
+
 
