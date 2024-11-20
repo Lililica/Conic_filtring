@@ -5,6 +5,8 @@
 #include "raylib.h"
 #include "utils.hpp"
 #include <Eigen/Dense>
+#include <sil/sil.hpp>
+
 
 
 enum State {Accueil, Select_Droite, Show_droite, Show_resolution};
@@ -24,6 +26,7 @@ class app
         std::vector<button> m_button_list;
 
         std::vector<droite> m_listOfDroite;
+        Eigen::VectorXd FinalK;
 
 
         bool HaveToCreateALine = true;
@@ -41,8 +44,8 @@ class app
 
         void manage_line_selection();
         void draw_lines();
-        void find_kn();
-        double Residu_from_k(double &k1, double &k2, float &xc, float &yx);
+        Eigen::VectorXd find_kn();
+        double Residu_from_k(double k1, double k2, float xc, float yx);
         Eigen::VectorXd system_resolution_non_lineaire(Eigen::VectorXd& Jacob, int iteration, Vector2 xyc, Eigen::VectorXd originK);
         // Eigen::VectorXd find_delta_A_from_equation(Eigen::VectorXd& Jacob, double& lamda, Vector2 xyc);
 

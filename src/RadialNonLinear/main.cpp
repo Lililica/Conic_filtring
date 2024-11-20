@@ -16,36 +16,6 @@ int main(){
 
 
 
-    sil::Image imageRef{"src/RadialNonLinear/source/ressource.png"};
-
-    sil::Image resultImage = imageRef;
-
-    float xc = imageRef.width()/2; 
-    float yc = imageRef.height()/2; 
-
-    double k1 = 10e-10;
-    double k2 = 8e-13;
-
-    // auto r = [xc, yc](int a, int b) {
-    //     return std::pow(a - xc, 2) + std::pow(b - yc, 2);
-    // };
-
-    for(float x{0}; x<imageRef.width(); x++)
-    {
-        for(float y{0}; y<imageRef.height(); y++)
-        {
-            float ri = r2(x,y,xc,yc);
-            float xichap = x - delta(x, xc, k1, k2, ri);
-            float yichap = y - delta(y, yc, k1, k2, ri);
-            if(!(xichap>=imageRef.width() || yichap>=imageRef.height() || yichap<0 || xichap<0) ){
-                resultImage.pixel(x,y) = imageRef.pixel(xichap, yichap);
-            }
-            
-        }
-    }
-
-    resultImage.save("src/RadialNonLinear/source/ressource_modif.png");
-
   
   
     /*________________________________________________________________

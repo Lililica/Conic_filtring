@@ -148,7 +148,7 @@ void app::draw_content()
         */
 
         DrawTexturePro(this->m_texture[0], 
-                    Rectangle{0,float(m_texture[0].height),float(m_texture[0].width),-float(m_texture[0].height)}, 
+                    Rectangle{0,0,float(m_texture[0].width),float(m_texture[0].height)}, 
                     Rectangle{200,200,float(m_texture[0].width),float(m_texture[0].height)},
                     Vector2{0., 0.},
                     0.,
@@ -173,7 +173,7 @@ void app::draw_content()
         */
 
         DrawTexturePro(this->m_texture[0], 
-                    Rectangle{0,float(m_texture[0].height),float(m_texture[0].width),-float(m_texture[0].height)}, 
+                    Rectangle{0,0,float(m_texture[0].width),float(m_texture[0].height)}, 
                     Rectangle{200,200,float(m_texture[0].width),float(m_texture[0].height)},
                     Vector2{0., 0.},
                     0.,
@@ -190,10 +190,70 @@ void app::draw_content()
     if(this->m_state == State::Show_resolution){
         if(this->ok)
         {
-            find_kn();
+            this->FinalK = this->find_kn();
             ok = false;
+
+            sil::Image imageRef{"src/RadialNonLinear/source/ressource.png"};
+
+            sil::Image resultImage = imageRef;
+
+            float xc = imageRef.width()/2; 
+            float yc = imageRef.height()/2; 
+
+            double k1 = this->FinalK(0);
+            double k2 = this->FinalK(1);
+
+            // double k1 = 9.82724e-16;
+            // double k2 = 1.11423e-10;
+
+            // auto r = [xc, yc](int a, int b) {
+            //     return std::pow(a - xc, 2) + std::pow(b - yc, 2);
+            // };
+
+            for(float x{0}; x<imageRef.width(); x++)
+            {
+                for(float y{0}; y<imageRef.height(); y++)
+                {
+                    float ri = r2(x,y,xc,yc);
+                    float xichap = x - delta(x, xc, k1, k2, ri);
+                    float yichap = y - delta(y, yc, k1, k2, ri);
+                    if(!(xichap>=imageRef.width() || yichap>=imageRef.height() || yichap<0 || xichap<0) ){
+                        resultImage.pixel(x,y) = imageRef.pixel(xichap, yichap);
+                    }
+                    
+                }
+            }
+
+            resultImage.save("src/RadialNonLinear/source/ressource_modif.png");
+
+
+            Image imageDeModif = LoadImage("/Users/lililica/Documents/IMAC/Maths/Projets/Conic_filtring/src/RadialNonLinear/source/ressource_modif.png");
+            this->m_texture.push_back(LoadTextureFromImage(imageDeModif));
+
         }
+
+
+        DrawTexturePro(this->m_texture[0], 
+                    Rectangle{0,0,float(m_texture[0].width),float(m_texture[0].height)}, 
+                    Rectangle{100,300,float(m_texture[0].width)/1.5f,float(m_texture[0].height)/1.5f},
+                    Vector2{0., 0.},
+                    0.,
+                    WHITE);  
+
+
+        DrawTexturePro(this->m_texture[1], 
+                    Rectangle{0,float(m_texture[0].height),float(m_texture[0].width),-float(m_texture[0].height)}, 
+                    Rectangle{600,300,float(m_texture[0].width)/1.5f,float(m_texture[0].height)/1.5f},
+                    Vector2{0., 0.},
+                    0.,
+                    WHITE);  
+
+
+
+
     }
+
+
         
 }
 
@@ -261,7 +321,7 @@ void app::draw_lines(){
 
 
 
-void app::find_kn()
+Eigen::VectorXd app::find_kn()
 {
 
     /*
@@ -276,7 +336,7 @@ void app::find_kn()
     originK(1) = k2;
 
     double dk1 = 10e-10;
-    double dk2 = 10e-17;
+    double dk2 = 10e-15;
 
 
     // Rectangle{200,200,float(m_texture[0].width),float(m_texture[0].height)}
@@ -288,9 +348,10 @@ void app::find_kn()
 
 
     Eigen::VectorXd Jacob(2);
-    std::cout << this->Residu_from_k(k1, k2, xc, yc) << " and " << this->Residu_from_k(dk1, k2, xc, yc) << " and " << this->Residu_from_k(k1, dk2, xc, yc) << std::endl;
+    std::cout << "residu pre-calcul (global_residu) : " << this->global_residu << " et Residu après calcul : " << this->Residu_from_k(k1, k2, xc, yc) << " and " << this->Residu_from_k(dk1, k2, xc, yc) << " and " << this->Residu_from_k(k1, dk2, xc, yc) << std::endl;
     std::cout << "k1 = " << k1 << " k2 = " << k2 << " dk1 = " << dk1 << " dk2 = " << dk2 << std::endl;
     std::cout << "Diff : " << this->Residu_from_k(dk1, k2, xc, yc) - this->global_residu << " and " << this->Residu_from_k(k1, dk2, xc, yc) - this->global_residu << std::endl;
+
     Jacob(0) = (this->Residu_from_k(dk1, k2, xc, yc) - this->global_residu)/dk1;
     Jacob(1) = (this->Residu_from_k(k1, dk2, xc, yc) - this->global_residu)/dk2;
 
@@ -303,20 +364,22 @@ void app::find_kn()
     std::cout << "Final k1 and k2 : " << std::endl;
     std::cout << finalA << std::endl;
 
+    return finalA;
+
 }
 
 
 
-double app::Residu_from_k(double &k1, double &k2, float &xc, float &yc)
+double app::Residu_from_k(double k1, double k2, float xc, float yc)
 {
     double residuResult = 0.;
 
-    for(droite &d : this->m_listOfDroite)
+    for(droite d : this->m_listOfDroite)
     {
         for(Vector2 &point : d.listOfPoint)
         {
             float ri = r2(point.x,point.y,xc,yc);
-            point.x = point.x - delta(point.x, xc, k1, k2, ri);
+            point.x = point.x + delta(point.x, xc, k1, k2, ri);
             point.y = point.y - delta(point.y, yc, k1, k2, ri);
         }
         d.setup_residu_and_distance();
@@ -337,15 +400,27 @@ Eigen::VectorXd app::system_resolution_non_lineaire(Eigen::VectorXd& Jacob, int 
 
         while(!accept)
         {
-            Eigen::VectorXd DeltaA = -(Jacob*this->Residu_from_k(originalK(0), originalK(1),xyc.x,xyc.y))/(Jacob.transpose()*Jacob + lambda);
+            Eigen::MatrixXd A = Jacob*Jacob.transpose() + lambda*Eigen::MatrixXd::Identity(2,2);
+            Eigen::MatrixXd B = -Jacob*this->Residu_from_k(originalK(0), originalK(1),xyc.x,xyc.y);
+            Eigen::VectorXd DeltaA = A.colPivHouseholderQr().solve(B);
+
+            std::cout << "Tentative n°" << compteur << " :" << std::endl;
 
             double newK1 = originalK(0) + DeltaA(0);
             double newK2 = originalK(1) + DeltaA(1);
 
-            if(std::abs(this->Residu_from_k(newK1, newK2, xyc.x, xyc.y)) < std::abs(this->Residu_from_k(originalK(0), originalK(1),xyc.x,xyc.y)))
+            double newResidu = std::abs(this->Residu_from_k(newK1, newK2, xyc.x, xyc.y));
+            double ancienResidu = std::abs(this->Residu_from_k(originalK(0), originalK(1),xyc.x,xyc.y));
+
+
+            std::cout << "Origink1 = " << originalK(0) << " et Origink2 = " << originalK(1) << std::endl;
+            std::cout << "Newk1 = " << newK1 << " et Newk2 = " << newK2 << std::endl;
+            std::cout << "Mon nouveau residu = " << newResidu << " et ancien = " << ancienResidu << std::endl;
+
+            if(newResidu <  ancienResidu)
             {
-                originalK(0) += DeltaA(0);
-                originalK(1) += DeltaA(1);
+                originalK(0) = newK1;
+                originalK(1) = newK2;
                 lambda /= 10.;
                 accept = true; 
             }else{
