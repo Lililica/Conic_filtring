@@ -184,7 +184,7 @@ void app::draw_content()
             PARTIE POUR GERER LES POINTS
         */
 
-       this->draw_lines();
+        this->draw_lines();
         
     }
     if(this->m_state == State::Show_resolution){

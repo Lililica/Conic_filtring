@@ -71,3 +71,4 @@ endfunction(add_exercise)
 
 add_exercise(Conic)
 add_exercise(RadialNonLinear)
+add_exercise(Chaleur)

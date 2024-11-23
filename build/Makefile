@@ -189,6 +189,19 @@ RadialNonLinear/fast:
 .PHONY : RadialNonLinear/fast
 
 #=============================================================================
+# Target rules for targets named Chaleur
+
+# Build rule for target.
+Chaleur: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Chaleur
+.PHONY : Chaleur
+
+# fast build rule for target.
+Chaleur/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/build
+.PHONY : Chaleur/fast
+
+#=============================================================================
 # Target rules for targets named sil
 
 # Build rule for target.
@@ -239,6 +252,54 @@ stb_image: cmake_check_build_system
 stb_image/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/img-build/CMakeFiles/stb_image.dir/build.make _deps/img-build/CMakeFiles/stb_image.dir/build
 .PHONY : stb_image/fast
+
+src/Chaleur/chaleur.o: src/Chaleur/chaleur.cpp.o
+.PHONY : src/Chaleur/chaleur.o
+
+# target to build an object file
+src/Chaleur/chaleur.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/chaleur.cpp.o
+.PHONY : src/Chaleur/chaleur.cpp.o
+
+src/Chaleur/chaleur.i: src/Chaleur/chaleur.cpp.i
+.PHONY : src/Chaleur/chaleur.i
+
+# target to preprocess a source file
+src/Chaleur/chaleur.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/chaleur.cpp.i
+.PHONY : src/Chaleur/chaleur.cpp.i
+
+src/Chaleur/chaleur.s: src/Chaleur/chaleur.cpp.s
+.PHONY : src/Chaleur/chaleur.s
+
+# target to generate assembly for a file
+src/Chaleur/chaleur.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/chaleur.cpp.s
+.PHONY : src/Chaleur/chaleur.cpp.s
+
+src/Chaleur/main.o: src/Chaleur/main.cpp.o
+.PHONY : src/Chaleur/main.o
+
+# target to build an object file
+src/Chaleur/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/main.cpp.o
+.PHONY : src/Chaleur/main.cpp.o
+
+src/Chaleur/main.i: src/Chaleur/main.cpp.i
+.PHONY : src/Chaleur/main.i
+
+# target to preprocess a source file
+src/Chaleur/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/main.cpp.i
+.PHONY : src/Chaleur/main.cpp.i
+
+src/Chaleur/main.s: src/Chaleur/main.cpp.s
+.PHONY : src/Chaleur/main.s
+
+# target to generate assembly for a file
+src/Chaleur/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Chaleur.dir/build.make CMakeFiles/Chaleur.dir/src/Chaleur/main.cpp.s
+.PHONY : src/Chaleur/main.cpp.s
 
 src/Conic/main.o: src/Conic/main.cpp.o
 .PHONY : src/Conic/main.o
@@ -349,11 +410,18 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... uninstall"
+	@echo "... Chaleur"
 	@echo "... Conic"
 	@echo "... RadialNonLinear"
 	@echo "... img"
 	@echo "... sil"
 	@echo "... stb_image"
+	@echo "... src/Chaleur/chaleur.o"
+	@echo "... src/Chaleur/chaleur.i"
+	@echo "... src/Chaleur/chaleur.s"
+	@echo "... src/Chaleur/main.o"
+	@echo "... src/Chaleur/main.i"
+	@echo "... src/Chaleur/main.s"
 	@echo "... src/Conic/main.o"
 	@echo "... src/Conic/main.i"
 	@echo "... src/Conic/main.s"
